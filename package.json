@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -14,10 +15,16 @@
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "babel-jest": "^28.1.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
     "mini-css-extract-plugin": "^2.6.0",
+    "react-test-render": "^1.1.2",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2"
   },
@@ -26,5 +33,11 @@
     "howler": "^2.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  }
+  },
+  "jest": {
+      "testEnvironment": "jsdom",
+      "moduleNameMapper": {
+        "\\.(css|scss)$": "<rootDir>/_mocks_/styleMock.js"
+      }
+    }
 }
